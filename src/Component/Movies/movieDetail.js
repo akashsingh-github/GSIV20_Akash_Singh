@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from "react";
 import ReactLoading from 'react-loading';
 import HomeIcon from '@material-ui/icons/Home';
-
+import {Link} from "react-router-dom";
+import Button from "@material-ui/core/Button";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 function MovieDetail(props){
     const {movie_detail} = props;
@@ -31,6 +33,9 @@ function MovieDetail(props){
             <>
                 <div className="top-bar page">
                     <div className="page-title">
+                        <Button className="back-button">
+                            <Link to="/"><ArrowBackIcon className="back-icon"/></Link>
+                        </Button>
                         <h1>Movie Detail</h1>
                     </div>
                     <div className="side-home-icon">

@@ -17,6 +17,20 @@
 .top-bar.page{
   height: 65px;
 }
+.page-title{
+  display: flex;
+  align-items: center;
+}
+.page-title .back-button{
+  padding-right: 10px;
+}
+.back-button a{
+  display: flex !important;
+}
+.back-icon{
+  display: flex;
+  align-self: center;
+}
 .page-title h1{
   font-weight: 400; 
   font-size: 20px;
