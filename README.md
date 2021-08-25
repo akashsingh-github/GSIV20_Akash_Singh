@@ -33,9 +33,12 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
+## `upcoming movies and search`
 The upcoming movies list is well oraganized and mapped on the upcoming movies array and retun to the MovieCard component. 
 The search bar on the home page works well when you type something on the search bar it renders the component from search API by filtering search query. Same movie card is used for rendering search results in the home page using conditional rendering. If search query is empty then render upcoming movies else render search result.
 
+## `detail`
 Detail page: seperate container is for detail page to render detail component and to pass detail stateToProps
 
+## `Further improvement`
 If I got more hours then I will make more filter on upcoming movies using genre array and also movie recommendation on the detail page based on the genre.
