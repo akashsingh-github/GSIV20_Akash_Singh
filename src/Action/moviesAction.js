@@ -15,7 +15,6 @@ export const get_upcoming_movies = () => dispatch => {
         .then(res => res.json())
         .then(res => {
             dispatch(getUpcomingMovies(res.results))
-            
         })
         .catch(err => {
             console.log(err);

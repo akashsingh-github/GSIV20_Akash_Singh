@@ -18,7 +18,7 @@ function Movies(props){
     })
     
     const moviesMap = sortedUpcomingMovies.map((movie, i) => {
-        return <MovieCard movie_detail={movie_detail} get_movie_detail={get_movie_detail} id={movie.id} title={movie.title} rating={movie.vote_average} description={movie.overview} imgSrc={movie.poster_path}/> 
+        return <MovieCard key={movie.id} movie_detail={movie_detail} get_movie_detail={get_movie_detail} id={movie.id} title={movie.title} rating={movie.vote_average} description={movie.overview} imgSrc={movie.poster_path}/> 
     })
     
     const handleChange = (query) => {

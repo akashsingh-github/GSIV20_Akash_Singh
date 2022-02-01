@@ -3,11 +3,12 @@ import {
     GET_UPCOMING_MOVIES,
     GET_SEARCH_RESULT
 } from "../Constant/moviesConst";
-
+import {LOADER} from "../Constant/loaderConst";
 const initialState = {
     upcoming_movies : [],
     movie_detail : {},
-    search_result : []
+    search_result : [],
+    loading: false
 }
 export default function reducer(state = initialState, action){
     switch(action.type){
@@ -27,6 +28,11 @@ export default function reducer(state = initialState, action){
             return {
                 ...state,
                 search_result: action.payload
+            }
+        case LOADER:
+            return{
+                ...state,
+                loading: true
             }
         default:
             return state;

@@ -4,6 +4,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import {Link} from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import LoaderCont from "../../Container/loaderCont";
 
 function MovieDetail(props){
     const {movie_detail} = props;
@@ -17,12 +18,11 @@ function MovieDetail(props){
     useEffect(() => {
         const timer = setTimeout(() => {
         setIsLoading(false);
-        console.log("time fired!!");
-        console.log(isLoading)
         }, 1000);
         return () => clearTimeout(timer)
     }, [])
-    // console.log(pComp);
+
+
     return(
         <>  
             {isLoading ? 
@@ -53,23 +53,26 @@ function MovieDetail(props){
                     </div>
                     <div className="basic-info">
                         <h4>{movie_detail.release_date}</h4>
-                        <h4> | {HH} : {MM}</h4>
+                        <h4> | {HH} : {MM} hours</h4>
                         <h4> | {year}</h4>
                     </div>
                     <div className="cast">
-                        <h4>Production Companies: {movie_detail.production_companies.map((movie, i) => {
-                            return <> {movie.name},</>
-
-                        })}</h4>
+                        <h4>
+                            Production Companies:{
+                                movie_detail.production_companies.map((i) =>{
+                                    return <li key={i.name}>{i.name}</li>
+                                })
+                            }
+                        </h4>
                     </div>
                     <div className="description">
                         <p>Description: {movie_detail.overview}</p>
                     </div>
                 </div>
             </div>
-
+            <LoaderCont/>
             </>
-            }
+            } 
         </>
     )
 }
